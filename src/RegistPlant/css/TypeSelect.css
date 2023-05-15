@@ -1,0 +1,26 @@
+.type-select {
+    position: absolute;
+    left: -2px;
+    top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px rgba(223, 222, 222, 0.466);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    z-index: 20;
+}
+
+.type-select-btn {
+    color: black;
+    font-size: 16px;
+    text-align: left;
+    padding: 15px;
+    background-color: white;
+    border: none;
+}
+
+.type-select button:nth-child(1), button:nth-child(2) {
+    border-bottom: solid 2px rgba(223, 222, 222, 0.466);
+}

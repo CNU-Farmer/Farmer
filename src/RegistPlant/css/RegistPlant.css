@@ -1,0 +1,85 @@
+.regist-plant {
+    display: flex;
+    flex-direction: column;
+}
+
+.regist-plant-header {
+    height: 60px;
+    color: #173E28;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.regist-plant-header-text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.regist-plant-header__img {
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+}
+
+.regist-plant-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.regist-plant-text {
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.regist-plant-input {
+    margin-top: 8px;
+    border: solid 2px rgba(223, 222, 222, 0.466);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 12px 20px;
+}
+
+.regist-plant-input-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.regist-plant-img__arrow {
+    width: 15px;
+}
+
+.regist-plant-input-date {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    color: gray;
+}
+
+.regist-plant-img__calendar {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.regist-plant-next {
+    width: 90%;
+    background-color: rgba(45, 130, 80, 0.50);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 0;
+    color: white;
+    font-size: 18px;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

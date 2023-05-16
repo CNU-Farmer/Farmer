@@ -8,7 +8,7 @@ import left_arrow from './img/left-arrow.png';
 
 const RegistPlant = function () {
     const typeRef = useRef();
-    const [openType, setOpenType] = useState(true);
+    const [openType, setOpenType] = useState(false);
 
     const onClickType = () => {
         setOpenType((cur) => !cur);

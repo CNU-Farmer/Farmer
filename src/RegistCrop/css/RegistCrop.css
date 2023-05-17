@@ -1,9 +1,9 @@
-.regist-plant {
+.regist-crop {
     display: flex;
     flex-direction: column;
 }
 
-.regist-plant-header {
+.regist-crop-header {
     height: 60px;
     color: #173E28;
     font-size: 20px;
@@ -13,19 +13,19 @@
     position: relative;
 }
 
-.regist-plant-header-text {
+.regist-crop-header-text {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.regist-plant-header__img {
+.regist-crop-header__img {
     width: 20px;
     height: 20px;
     margin-left: 30px;
 }
 
-.regist-plant-form {
+.regist-crop-form {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -33,12 +33,12 @@
     text-align: left;
 }
 
-.regist-plant-text {
+.regist-crop-text {
     font-size: 16px;
     margin-top: 50px;
 }
 
-.regist-plant-input {
+.regist-crop-input {
     margin-top: 8px;
     border: solid 2px rgba(223, 222, 222, 0.466);
     border-radius: 10px;
@@ -46,30 +46,30 @@
     padding: 12px 20px;
 }
 
-.regist-plant-input-type {
+.regist-crop-input-type {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
 }
 
-.regist-plant-img__arrow {
+.regist-crop-img__arrow {
     width: 15px;
 }
 
-.regist-plant-input-date {
+.regist-crop-input-date {
     background-color: white;
     display: flex;
     align-items: center;
     color: gray;
 }
 
-.regist-plant-img__calendar {
+.regist-crop-img__calendar {
     width: 18px;
     margin-right: 10px;
 }
 
-.regist-plant-next {
+.regist-crop-next {
     width: 90%;
     background-color: rgba(45, 130, 80, 0.50);
     border: none;

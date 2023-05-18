@@ -3,28 +3,6 @@
     flex-direction: column;
 }
 
-.regist-crop-header {
-    height: 60px;
-    color: #173E28;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.regist-crop-header-text {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.regist-crop-header__img {
-    width: 20px;
-    height: 20px;
-    margin-left: 30px;
-}
-
 .regist-crop-form {
     display: flex;
     flex-direction: column;

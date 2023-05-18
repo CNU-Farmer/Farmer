@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import TypeSelect from "./components/TypeSelect";
+import Header from "../Header/Header";
 import './css/RegistCrop.css';
 import arrow_down from './img/arrow-down.png';
 import calendar from './img/calendar.png';
-import left_arrow from './img/left-arrow.png';
 
 const RegistCrop = function () {
     const typeRef = useRef();
@@ -29,10 +29,7 @@ const RegistCrop = function () {
 
     return (
         <div className="regist-crop">
-            <div className="regist-crop-header">
-                <img src={left_arrow} alt="뒤로가기" className="regist-crop-header__img"/>
-                <span className="regist-crop-header-text">내 작물 등록</span>
-            </div>
+            <Header text="내 작물 등록"/>
             <div className="regist-crop-form">
                 <span className="regist-crop-text">작물 종류</span>
                 <div ref={typeRef} className="regist-crop-input regist-crop-input-type" onClick={onClickType}>

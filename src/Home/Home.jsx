@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
+import './css/Home.css';
 import CropCard from "./components/CropCard";
 import EmptyCard from "./components/EmptyCard";
+import BottomNav from "../BottomNav/BottomNav";
+import logo from './img/logo.png';
 
 const data = [
     {
@@ -16,13 +19,13 @@ const Home = function () {
     const [cropList, setCropList] = useState(data);
     return (
         <div className="home">
-            {cropList.length == 0 ? (
-                <div className="home-none"><EmptyCard /></div>
-            ) : (
-                <div className="home-crops">{
+            <img className="home-log" src={logo} alt="Farmer" />
+            <div className="home-body">
+                {cropList.length == 0 ? <EmptyCard /> : (
                     cropList.map((e) => <CropCard crop={e} />)
-                }</div>
-            )}
+                )}
+            </div>
+            <BottomNav />
         </div>
     );
 };

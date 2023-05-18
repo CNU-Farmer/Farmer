@@ -1,0 +1,48 @@
+.regist-state {
+    position: relative;
+    height: 100vh;
+}
+
+.regist-state-body {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.regist-state-body__img {
+    width: 120px;
+    height: 120px;
+}
+
+.regist-state-body__text {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.regist-state-body__btn {
+    background-color: #2d8250;
+    border: none;
+    color: white;
+    width: 120px;
+    padding: 15px 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.regist-state-next {
+    width: 90%;
+    background-color: rgba(45, 130, 80, 0.5);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 0;
+    color: white;
+    font-size: 18px;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

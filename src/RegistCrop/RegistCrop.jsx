@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import './css/RegistCrop.css';
 import arrow_down from './img/arrow-down.png';
 import calendar from './img/calendar.png';
+import DatePickerBox from "./components/DatePickerBox";
 
 const RegistCrop = function () {
     const typeRef = useRef();
@@ -42,7 +43,7 @@ const RegistCrop = function () {
                 <span className="regist-crop-text">마지막 물 준 날짜</span>
                 <button className="regist-crop-input regist-crop-input-date">
                     <img className="regist-crop-img__calendar" src={calendar} alt="달력" />
-                    <span>날짜 선택하기</span>
+                    <DatePickerBox />
                 </button>
             </div>
             <button className="regist-crop-next">다음</button>

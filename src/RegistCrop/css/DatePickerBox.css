@@ -1,0 +1,62 @@
+.datepicker {
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+
+.react-datepicker__day--outside-month {
+    cursor: default;
+    visibility: hidden;
+}
+
+.selectedDay,
+.unselectedDay {
+
+}
+
+.selectedDay {
+    color: #fff;
+    background-color: rgba(45, 130, 80);
+    border-radius: 50%;
+
+    &:hover {
+        border-radius: 50%;
+        background-color: rgba(45, 130, 80);
+      }
+}
+
+.unselectedDay {
+    &:hover {
+      border-radius: 50%;
+      background-color:rgba(45, 130, 80);
+    }
+}
+
+.react-datepicker {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.react-datepicker__header {
+    background-color: white;
+} 
+
+.react-datepicker__triangle {
+    display: none;
+}
+
+.react-datepicker__day-name {
+    color: gray;
+}
+
+.datepicker-header {
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.datepicker-header-btn {
+    display: flex;
+}

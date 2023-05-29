@@ -11,6 +11,7 @@
 .react-datepicker__tab-loop, .react-datepicker-popper {
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.467);
 }
 
 .react-datepicker-popper {
@@ -53,7 +54,7 @@
     bottom: 30px;
     transform: translate(-50%, 0);
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     animation: slider .5s;
 }
@@ -100,6 +101,7 @@
 
 .datepicker-header-btn {
     display: flex;
+    font-size: 22px;
 }
 
 .react-datepicker__children-container {
@@ -114,14 +116,15 @@
     border: none;
     border-top: 1px solid rgba(128, 128, 128, 0.5);
     padding: 15px 0;
+    margin-top: 15px;
     font-size: 18px;
 }
 
 @keyframes slider {
     0% {
-      transform: translateY(100%);
+      transform: translate(-50%, 100%);
     }
     100% {
-      transform: translateY(0);
+      transform: translate(-50%, 0);
     }
 }

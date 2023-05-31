@@ -19,17 +19,20 @@
 
 .regist-state-body__text {
     margin-top: 35px;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
 }
 
-.regist-state-body__btn {
+.regist-state-body__btn label{
     background-color: #2d8250;
     border: none;
     color: white;
-    width: 120px;
-    padding: 15px 0;
+    padding: 15px 30px;
     border-radius: 10px;
     font-size: 16px;
+}
+
+.regist-state-body__btn input[type="file"] {
+    display: none;
 }
 
 .regist-state-next {
@@ -45,4 +48,10 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+}
+
+.test_img {
+    z-index: 999;
+    width: 200px;
+    height: 200px;
 }

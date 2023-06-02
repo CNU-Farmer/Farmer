@@ -34,7 +34,7 @@ const Home = function () {
         slidesToShow: 1,
         speed: 500
     };
-    const [cropList, setCropList] = useState(data);
+    const [cropList, setCropList] = useState([]);
 
     useEffect(() => {
         axios
@@ -51,11 +51,11 @@ const Home = function () {
     return (
         <div className="home">
             <img className="home-log" src={logo} alt="Farmer" />
-            <Slider className="home-body" {...settings}>
-                {cropList.length === 0 ? <EmptyCard /> : (
-                    cropList.map((e) => <CropCard crop={e} />)
-                )}
+            {cropList.length === 0 ? <EmptyCard /> : (
+                <Slider className="home-body" {...settings}>
+                {cropList.map((e) => <CropCard crop={e} />)}
             </Slider>
+            )}
             <BottomNav />
         </div>
     );

@@ -34,7 +34,7 @@ const Home = function () {
         slidesToShow: 1,
         speed: 500
     };
-    const [cropList, setCropList] = useState([]);
+    const [cropList, setCropList] = useState(data);
 
     useEffect(() => {
         axios

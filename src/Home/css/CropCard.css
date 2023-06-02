@@ -81,6 +81,8 @@
 }
 
 .crop-card-state-btn {
+    text-decoration: none;
+    text-align: center;
     border: none;
     border-radius: 20px;
     width: 90px;

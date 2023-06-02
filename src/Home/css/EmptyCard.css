@@ -29,6 +29,8 @@
 }
 
 .empty-card-regist-btn {
+    text-decoration: none;
+    text-align: center;
     margin-top: 60px;
     border: none;
     border-radius: 20px;

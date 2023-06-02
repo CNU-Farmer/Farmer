@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 import '../css/CropCard.css';
 import lettuce from '../img/lettuce.png';
@@ -24,7 +25,7 @@ const CropCard = function ({ crop }) {
                         <img className="crop-card-info__divider" src={bar} alt="|" />
                         <span className="crop-card-inf__water">{crop.latest_watered_date}</span>
                     </div>
-                    <button className="crop-card-state-btn">상태 등록</button>
+                    <Link to="/state" className="crop-card-state-btn">상태 등록</Link>
                 </div>
             </div>
         </div>

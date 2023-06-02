@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 import '../css/CropCard.css';
-import lettuce from '../img/lettuce.png'
+import lettuce from '../img/lettuce.png';
+import bar from '../img/bar.png';
 
 const CropCard = function ({ crop }) {
     return (
@@ -11,12 +12,17 @@ const CropCard = function ({ crop }) {
             <div className="crop-card-box">
                 <div className="crop-card-background"/>
                 <div className="crop-card-info">
-                    <span className="crop-card-info__text">작물 종류</span>
-                    <span className="crop-card-info__type">{crop.type}</span>
-                    <span className="crop-card-info__harvest">{`수확 ${crop.harvestDate}`}</span>
-                    <div>
+                    <div className="crop-card-info-text-box">
+                        <span className="crop-card-info__text">작물 종류</span>
+                        <img className="crop-card-info__divider" src={bar} alt="|" />
+                        <span className="crop-card-info__text">{crop.species}</span>
+                    </div>
+                    <span className="crop-card-info__name">{crop.name}</span>
+                    <span className="crop-card-info__harvest">{`수확 ${crop.harvesting}`}</span>
+                    <div className="crop-card-info-text-box">
                         <span className="crop-card-info__text">다음 물 줄 날짜</span>
-                        <span className="crop-card-inf__water">&nbsp;|&nbsp;{crop.waterDate}</span>
+                        <img className="crop-card-info__divider" src={bar} alt="|" />
+                        <span className="crop-card-inf__water">{crop.latest_watered_date}</span>
                     </div>
                     <button className="crop-card-state-btn">상태 등록</button>
                 </div>

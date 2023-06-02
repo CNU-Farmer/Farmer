@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 import TypeSelect from "./components/TypeSelect";
 import Header from "../Header/Header";
@@ -16,7 +17,7 @@ const RegistCrop = function () {
         speciesKo: ''
     });
     const [name, setName] = useState('');
-    const [selectedtDate, setSelectedDate] = useState(new Date().toString());
+    const [selectedtDate, setSelectedDate] = useState(new Date());
 
     const selectType = (e) => {
         setType(e);
@@ -37,7 +38,7 @@ const RegistCrop = function () {
     };
 
     useEffect(() => {
-        console.log(type.speciesEng + ', ' + name + ', ' + selectedtDate);
+        console.log(type.speciesEng + ', ' + name + ', ' + dateFormat(selectedtDate));
     }, [type, name, selectedtDate])
 
     useEffect(() => {
@@ -46,6 +47,27 @@ const RegistCrop = function () {
           document.removeEventListener('click', handleClickTypeOutSide);
         };
     });
+
+    const dateFormat = (date) => {
+        return date.getFullYear() + '-' + ((date.getMonth() + 1) < 9 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)) + '-' + (date.getDate() < 9 ? "0" + date.getDate() : date.getDate()) ;
+    }
+
+    const onClickNext = () => {
+        const qs = require('qs');
+        axios
+            .post(`${process.env.REACT_APP_API_KEY}/register`, qs.stringify({
+                name: name,
+                species:type.speciesEng,
+                date: dateFormat(selectedtDate)
+            }))
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            
+    };
 
     return (
         <div className="regist-crop">
@@ -62,10 +84,10 @@ const RegistCrop = function () {
                 <span className="regist-crop-text">마지막 물 준 날짜</span>
                 <div className="regist-crop-input regist-crop-input-date">
                     <img className="regist-crop-img__calendar" src={calendar} alt="달력" />
-                    <DatePickerBox selectedtDate={selectedtDate} setSelectedDate={setSelectedDate} />
+                    <DatePickerBox selectedtDate={selectedtDate.toString()} setSelectedDate={setSelectedDate} />
                 </div>
             </div>
-            <button className="regist-crop-next" disabled={type.speciesEng && name ? false : true}>다음</button>
+            <button className="regist-crop-next" disabled={type.speciesEng && name ? false : true} onClick={onClickNext}>다음</button>
         </div>
     )
 };

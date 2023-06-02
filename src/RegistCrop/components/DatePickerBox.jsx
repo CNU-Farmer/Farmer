@@ -33,7 +33,7 @@ const DatePickerBox = function ({ selectedtDate, setSelectedDate }) {
       popperPlacement="auto"
       selected={new Date(selectedtDate)}
       shouldCloseOnSelect={false}
-      onChange={(date) => setSelectedDate(date.toString())}
+      onChange={(date) => setSelectedDate(date)}
       customInput={<ExampleCustomInput />}
       dayClassName={(d) =>
         d.getDate() === new Date(selectedtDate).getDate()

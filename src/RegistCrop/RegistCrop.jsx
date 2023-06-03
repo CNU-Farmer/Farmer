@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import TypeSelect from "./components/TypeSelect";
 import Header from "../Header/Header";
@@ -7,10 +7,10 @@ import './css/RegistCrop.css';
 import arrow_down from './img/arrow-down.png';
 import calendar from './img/calendar.png';
 import DatePickerBox from "./components/DatePickerBox";
-import { disable } from "workbox-navigation-preload";
 
 const RegistCrop = function () {
     const typeRef = useRef();
+    const navigate = useNavigate();
     const [openType, setOpenType] = useState(false);
     const [type, setType] = useState({
         speciesEng: '',
@@ -53,20 +53,11 @@ const RegistCrop = function () {
     }
 
     const onClickNext = () => {
-        const qs = require('qs');
-        axios
-            .post(`${process.env.REACT_APP_API_KEY}/register`, qs.stringify({
-                name: name,
-                species:type.speciesEng,
-                date: dateFormat(selectedtDate)
-            }))
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-            
+        navigate("/state", { state: {
+            name: name,
+            species:type.speciesEng,
+            date: dateFormat(selectedtDate)
+        }});
     };
 
     return (

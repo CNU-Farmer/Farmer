@@ -15,11 +15,11 @@
 .regist-state-body__img {
     width: 120px;
     height: 120px;
+    margin-bottom: 35px;
 }
 
-.regist-state-body__text {
-    margin-top: 35px;
-    margin-bottom: 50px;
+.regist-state-body__btn {
+    margin-top: 50px;
 }
 
 .regist-state-body__btn label{

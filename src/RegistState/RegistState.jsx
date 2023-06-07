@@ -12,20 +12,30 @@ const RegistState = function () {
     const location = useLocation();
     const [imageUrl, setImageUrl] = useState('');
 
-    const showImg = (e) => {
-        console.log(e.target.value);
-        if(imageUrl) {
-            URL.revokeObjectURL(imageUrl);
-        }
-
+    const showImg = (e) => {        
         if(e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onloadend = () => {
                 setImageUrl(reader.result);
-                console.log(e.target.files[0]);
             };
+            const data = new FormData();
+            data.append('crop_id', '4');
+            data.append('image', e.target.files[0]);
+
+            axios
+                .post(`${process.env.REACT_APP_API_KEY}/register/img`, data)
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    let values = error.config.data.values();
+                    for (const pair of values) {
+                        console.log(pair); 
+                    }
+                });
         }
     };
 
@@ -33,26 +43,48 @@ const RegistState = function () {
         console.log(location);
     }, []);
     
-    // const onClickComplete = () => {
-    //     const qs = require('qs');
-    //     axios
-    //         .post(`${process.env.REACT_APP_API_KEY}/register`, qs.stringify(location.state))
-    //         .then((response) => {
-    //             console.log(response.data.response.success);
-    //             const response_str = response.data.response.success;
-    //             const id = response_str.charAt(response_str.length - 2);
-    //             const fs = require('fs');
-    //             const data = new FormData();
-    //             data.append('crop_id', id);
-    //             data.append('image', fs.createReadStream())
-    //             axios.
-    //                 post(`${process.env.REACT_APP_API_KEY}/register/img`)
+    const onClickComplete = (file) => {
+        console.log(file);
+        // const qs = require('qs');
+        // axios
+        //     .post(`${process.env.REACT_APP_API_KEY}/register`, qs.stringify(location.state))
+        //     .then((response) => {
+        //         console.log(response.data.response.success);
+        //         const response_str = response.data.response.success;
+        //         const id = response_str.charAt(response_str.length - 2);
+        //         const data = new FormData();
+        //         data.append('crop_id', id);
+        //         data.append('image', file);
+        //         axios
+        //             .post(`${process.env.REACT_APP_API_KEY}/register/img`, data)
+        //             .then((res) => {
+        //                 console.log(res);
+        //             });
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+        const data = new FormData();
+        data.append('crop_id', '4');
+        data.append('image', file, file.name);
 
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // };
+        axios
+            .post(`${process.env.REACT_APP_API_KEY}/register/img`, data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((error) => {
+                console.log(error);
+                let values = error.config.data.values();
+                for (const pair of values) {
+                    console.log(pair); 
+                }
+            })
+    };
 
     return(
         <div className="regist-state">

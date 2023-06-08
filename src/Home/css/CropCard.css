@@ -1,14 +1,14 @@
 .crop-card {
     position: relative;
-    width: 220px;
+    width: 210px;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);
     border-radius: 60px 20px;
     margin: 0 auto;
 }
 
 .crop-card-box {
-    width: 220px;
-    height: 450px;
+    width: 210px;
+    height: 430px;
     background-color: #DFE9E4;
     border-radius: 60px 20px;
     overflow: hidden;
@@ -16,8 +16,8 @@
 }
 
 .crop-card-background {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 200px;
     border-radius: 50%;
     background-color: #c5dcd0;
     position: absolute;
@@ -26,10 +26,10 @@
 }
 
 .crop-card-img {
-    width: 200px;
-    height: 220px;
+    width: 180px;
+    height: 200px;
     position: absolute;
-    top: -100px;
+    top: -80px;
     left: 0px;
     z-index: 90;
 }
@@ -53,14 +53,14 @@
 }
 
 .crop-card-info__text {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .crop-card-info__divider {
-    height: 14px;
+    height: 12px;
     width: 1px;
     object-fit: none;
-    margin: 0 5px 0 3px;
+    margin: 0 3px 0 3px;
 }
 
 .crop-card-info__name {

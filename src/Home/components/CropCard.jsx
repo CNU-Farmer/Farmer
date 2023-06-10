@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import '../css/CropCard.css';
 import lettuce from '../img/lettuce.png';
@@ -11,10 +11,17 @@ const nameMap = {
 };
 
 const CropCard = function ({ crop }) {
+    const navigate = useNavigate();
     const date = new Date(crop.latest_watered_date);
     const dateFormat = (date) => {
         return date.getFullYear() + '.' + ((date.getMonth() + 1) < 9 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)) + '.' + (date.getDate() < 9 ? "0" + date.getDate() : date.getDate()) ;
     }
+
+    const onClickRegistBtn = () => {
+        navigate("/state", { state: {
+            crop_id: crop.id
+        }});
+    };
     return (
         <div className="crop-card">
             <img className="crop-card-img" src={lettuce} alt="crop img" />
@@ -37,7 +44,7 @@ const CropCard = function ({ crop }) {
                         <img className="crop-card-info__divider" src={bar} alt="|" />
                         <span className="crop-card-inf__water">{dateFormat(date)}</span>
                     </div>
-                    <Link to="/state" className="crop-card-state-btn">상태 등록</Link>
+                    <button className="crop-card-state-btn" onClick={onClickRegistBtn}>상태 등록</button>
                 </div>
             </div>
         </div>

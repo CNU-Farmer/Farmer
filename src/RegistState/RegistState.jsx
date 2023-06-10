@@ -23,7 +23,11 @@ const RegistState = function () {
     const showImg = (e) => {        
         if(e.target.files && e.target.files[0]) {
             setImageUrl(e.target.files[0]);
-            onComplete(e.target.files[0]);
+            if(location.state.crop_id){
+                onRegistState(location.state.crop_id, e.target.files[0]);
+            }else {
+                onRegistCrop(e.target.files[0]);
+            }
             // const data = new FormData();
             // data.append('crop_id', '4');
             // data.append('image', e.target.files[0]);
@@ -47,7 +51,32 @@ const RegistState = function () {
         console.log(location);
     }, []);
     
-    const onComplete = (file) => {
+    const onRegistState = (id, file) => {
+        setLoading(true);
+        const data = new FormData();
+        data.append('crop_id', id);
+        data.append('image', file);
+
+        axios
+            .post(`${process.env.REACT_APP_API_KEY}/register/img`, data)
+            .then((res) => {
+                let values = res.config.data.values();
+                for (const pair of values) {
+                    console.log(pair); 
+                }
+                setLoading(false);
+                navigate('/');
+            })
+            .catch((error) => {
+                console.log(error);
+                let values = error.config.data.values();
+                for (const pair of values) {
+                    console.log(pair); 
+                }
+            });
+    }
+
+    const onRegistCrop = (file) => {
         setLoading(true);
         const qs = require('qs');
         axios

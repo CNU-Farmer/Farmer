@@ -16,14 +16,14 @@ const data = [
     id: "1",
     species: "상추",
     name: "상추도사",
-    harvesting: "1주전",
+    harvesting: "1",
     latest_watered_date: "2022.04.11",
   },
   {
     id: "2",
     species: "상추",
     name: "상추도사",
-    harvesting: "2주전",
+    harvesting: "2",
     latest_watered_date: "2022.04.11",
   },
 ];
@@ -36,14 +36,17 @@ const Home = function () {
     slidesToShow: 1,
     speed: 500,
   };
-  const [cropList, setCropList] = useState(data);
+  const [cropList, setCropList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${process.env.REACT_APP_API_KEY}/`)
       .then((response) => {
         console.log(response);
-        // setCropList(response.data.crops);
+        setCropList(response.data.crops);
+        setLoading(false);
       })
       .catch((error) => {
         console.log("error", error);
@@ -53,7 +56,7 @@ const Home = function () {
   return (
     <div className="home">
       <img className="home-log" src={logo} alt="Farmer" />
-      {cropList.length === 0 ? (
+      {!loading && (cropList.length === 0) ? (
         <EmptyCard />
       ) : (
         <Slider className="home-body" {...settings}>

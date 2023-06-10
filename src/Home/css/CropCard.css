@@ -1,0 +1,112 @@
+.crop-card {
+    position: relative;
+    width: 210px;
+    box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 60px 20px;
+    margin: 0 auto;
+}
+
+.crop-card-box {
+    width: 210px;
+    height: 430px;
+    background-color: #DFE9E4;
+    border-radius: 60px 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.crop-card-background {
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #c5dcd0;
+    position: absolute;
+    top: -60px;
+    left: -30px;
+}
+
+.crop-card-img {
+    width: 180px;
+    height: 200px;
+    position: absolute;
+    top: -80px;
+    left: 0px;
+    z-index: 90;
+}
+
+.crop-card-info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: left;
+    color: #173E28;
+    animation: fadein 1s;
+}
+
+.crop-card-info-text-box {
+    display: flex;
+    align-items: center;
+}
+
+.crop-card-info__text {
+    font-size: 13px;
+}
+
+.crop-card-info__divider {
+    height: 12px;
+    width: 1px;
+    object-fit: none;
+    margin: 0 3px 0 3px;
+}
+
+.crop-card-info__name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.crop-card-info__harvest {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.crop-card-info__harvest-sm {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.crop-card-info__harvest-bg {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.crop-card-inf__water {
+    font-size: 15px;
+}
+
+.crop-card-state-btn {
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    width: 90px;
+    margin: 40px auto 0px auto;
+    padding: 12px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2D8251;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

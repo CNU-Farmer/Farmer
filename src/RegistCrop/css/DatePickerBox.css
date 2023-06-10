@@ -1,0 +1,130 @@
+.datapicker-custom-input {
+    background-color: white;
+    border: none;
+    border-bottom: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+}
+
+.react-datepicker__tab-loop, .react-datepicker-popper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.467);
+}
+
+.react-datepicker-popper {
+    transform: translate(0, 0) !important;
+    padding-left: 0px !important;
+}
+
+.react-datepicker__day--outside-month {
+    cursor: default;
+    visibility: hidden;
+}
+
+.selectedDay,
+.unselectedDay {
+    width: 45px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    padding: 6px 0;
+    font-weight: normal;
+}
+
+.selectedDay {
+    color: #fff;
+    background-color: rgba(45, 130, 80);
+    border-radius: 50%;
+}
+
+.selectedDay:hover, .unselectedDay:hover {
+    border-radius: 50%;
+    background-color: rgba(45, 130, 80);
+    color: #fff;
+}
+
+.datepicker-custom-calendar {
+    width: 95%;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 0);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: slider .5s;
+}
+
+.react-datepicker__month-container {
+    width: 100%;
+}
+
+.react-datepicker__header {
+    width: 100%;
+    background-color: white;
+    border-bottom: none;
+    font-size: 16px;
+} 
+
+.react-datepicker__triangle {
+    display: none;
+}
+
+.react-datepicker__day-names {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.react-datepicker__day-name {
+    color: gray;
+    width: 40px;
+    font-size: 14px;
+}
+
+.react-datepicker__week {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.datepicker-custom-header {
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 10px 10px;
+}
+
+.datepicker-header-btn {
+    display: flex;
+    font-size: 22px;
+}
+
+.react-datepicker__children-container {
+    width: 100%;
+    margin: 0;
+}
+
+.datepicker-confirm-btn {
+    width: 100%;
+    background-color: white;
+    color: rgba(45, 130, 80);
+    border: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 15px 0;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+@keyframes slider {
+    0% {
+      transform: translate(-50%, 100%);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+}

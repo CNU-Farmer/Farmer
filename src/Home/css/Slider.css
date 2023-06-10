@@ -1,0 +1,18 @@
+.slick-slider {
+    top: 50%;
+    transform: translate(0, -55%);
+}
+
+.slick-list {
+    padding-top: 90px !important;
+    padding-bottom: 30px !important;
+}
+
+.slick-arrow {
+    display: none !important;
+}
+
+.slick-slide.slick-active.slick-current {
+    transform: scale(1.1);
+    transition: 0.25s;
+}

@@ -114,7 +114,7 @@ const RegistState = function () {
                 <span className="regist-state-body__text">현재 상태를 알려주세요.</span>
                 <div className="regist-state-body__btn">
                     <label for="file">사진 찍기</label>
-                    <input type="file" capture="environment" accept="image/*" id="file" onChange={showImg}/>
+                    <input type="file" accept="image/*" id="file" onChange={showImg}/>
                 </div>
                 <img id="test" className="test_img" alt="selected img"/>
             </div>

@@ -7,7 +7,7 @@ const Crops = ({ items }) => {
     // <Card className="crops">
     <>
       {items.map((item) => (
-        <CropItems key={item.id} type={item.type} title={item.title} />
+        <CropItems key={item.id} id={item.id} species={item.species} name={item.name} />
       ))}
       {/* </Card> */}
     </>

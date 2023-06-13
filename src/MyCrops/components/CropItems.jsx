@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import axios from "axios";
 // import Card from "../../UI/Card";
 import "../css/CropItems.css";
 
-const CropItems = ({ type, title }) => {
-  // const deleteCrop = () => {
-  //   navigate("/register");
-  // };
-
-  //   const [type, setType] = useState(props.type);
-  //   const [title, setTitle] = useState(props.title);
-
-  //   const clickHandler = () => {
-  //     setTitle("Updated");
-  //     console.log(title);
-  //   };
-
+const CropItems = ({ id, species, name }) => {
+  const cropMap = {"lettuce" : "상추"};
+  const onDelete = () => {
+    axios
+      .delete(`${process.env.REACT_APP_API_KEY}/my_crops?id=${id}`)
+      .then((response) => {
+        console.log(response);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
   return (
     <div className="crop-item">
-      <div className="crop-item__type">{type}</div>
-      <div className="crop-item__title">{title}</div>
-      <div
+      <div className="crop-item__type">{cropMap[species]}</div>
+      <div className="crop-item__title">{name}</div>
+      <button
         className="delete-crop-btn"
-        // onClick={deleteCrop}>
-      >
+        onClick={onDelete}>
         삭제
-      </div>
+      </button>
     </div>
   );
 };

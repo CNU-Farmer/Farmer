@@ -1,9 +1,18 @@
-.my-crops-container {
+.my-crops {
   width: 100%;
   height: 100%;
-  margin-top: 120px;
+  margin-top: 100px;
+}
+
+.my-crops-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .regist-crop-btn {
-  width: 20px;
+  width: 60px;
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
 }

@@ -1,0 +1,50 @@
+.react-datepicker {
+  font-size: 16px !important;
+  border: 0px !important;
+  display: inline;
+}
+.react-datepicker__week {
+  margin-bottom: 45px !important;
+}
+
+.react-datepicker__month-container {
+  margin-top: 10px !important;
+  border: 0px white !important;
+}
+
+.react-datepicker__day--selected {
+  color: #2d8251 !important;
+  background-color: #ffffff !important;
+  font-weight: bold;
+}
+.react-datepicker__header {
+  font-size: 16px !important;
+  font-weight: 100 !important;
+}
+
+.react-datepicker__current-month {
+  margin-bottom: 20px !important;
+}
+.react-datepicker__day-names {
+  margin: 0 7px 7px 0 !important;
+}
+
+.react-datepicker__day--today {
+  color: lightgray;
+}
+
+.todo-container {
+  margin-left: 20px;
+}
+
+.onclick-todo {
+  margin-bottom: 10px;
+}
+.checkbox-todo {
+  margin-bottom: 10px;
+}
+.profile-line {
+  width: 120vw;
+  color: white;
+  size: 1px;
+}

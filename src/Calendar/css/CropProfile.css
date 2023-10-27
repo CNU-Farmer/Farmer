@@ -1,0 +1,28 @@
+.select-crop-profile-container {
+  display: flex;
+  width: 100vw;
+  margin: 0 20px 0 20px;
+  height: 15vh;
+  align-items: center;
+  /* justify-content: center; */
+}
+.select-crop-item {
+  display: block;
+  width: 80px;
+  justify-content: center;
+}
+
+.profile-color-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #6d986b;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.crop-title {
+  font-size: 12px;
+  color: grey;
+  text-align: center;
+}

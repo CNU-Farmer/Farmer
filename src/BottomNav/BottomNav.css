@@ -1,0 +1,33 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    height: 65px;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.bottom-nav-item__img {
+    width: 25px;
+    height: 25px;
+}
+
+.bottom-nav-item__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #246640;
+    margin-top: 4px;
+}
